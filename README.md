@@ -137,9 +137,9 @@ Copyright (c) 2025 M Abrar Khalid
 
 ## Demo & Screenshots
 
-Check out the live demo at [https://abrar-admin.vercel.app](https://abrar-admin.vercel.app)
+Check out the live demo at [https://modern-admin-dashboard-template.vercel.app](https://modern-admin-dashboard-template.vercel.app)
 
-![Dashboard Screenshot](https://via.placeholder.com/1200x600?text=Abrar+Admin+Dashboard+Screenshot)
+![Dashboard Screenshot](./public/image.png)
 
 ## Contributing
 
