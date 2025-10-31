@@ -37,9 +37,7 @@ export function OperationalCards() {
       <Card>
         <CardHeader>
           <CardTitle>Sales by Region</CardTitle>
-          <CardDescription className="font-medium tabular-nums">
-            {formatCurrency(totalSales, { noDecimals: true })}
-          </CardDescription>
+          <CardDescription className="font-medium tabular-nums">{formatCurrency(totalSales, { noDecimals: true })}</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="space-y-2.5">
@@ -48,17 +46,8 @@ export function OperationalCards() {
                 <div className="flex items-center justify-between">
                   <span className="text-sm font-medium">{region.region}</span>
                   <div className="flex items-baseline gap-1">
-                    <span className="text-sm font-semibold tabular-nums">
-                      {formatCurrency(region.sales, { noDecimals: true })}
-                    </span>
-                    <span
-                      className={cn(
-                        "text-xs font-medium tabular-nums",
-                        region.isPositive ? "text-green-500" : "text-destructive",
-                      )}
-                    >
-                      {region.growth}
-                    </span>
+                    <span className="text-sm font-semibold tabular-nums">{formatCurrency(region.sales, { noDecimals: true })}</span>
+                    <span className={cn("text-xs font-medium tabular-nums", region.isPositive ? "text-green-500" : "text-destructive")}>{region.growth}</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-2">

@@ -92,9 +92,7 @@ export function AccountOverview() {
                 </div>
                 <div className="absolute top-1/2 w-full -translate-y-1/2">
                   <div className="flex items-end justify-between px-6">
-                    <span className="text-accent font-mono text-lg leading-none font-medium tracking-wide uppercase">
-                      Abrar Khalid
-                    </span>
+                    <span className="text-accent font-mono text-lg leading-none font-medium tracking-wide uppercase">Abrar Khalid</span>
                     <ChipSVG />
                   </div>
                 </div>
@@ -152,12 +150,7 @@ export function AccountOverview() {
                           <p className="text-muted-foreground line-clamp-1 text-xs">{transaction.subtitle}</p>
                         </div>
                         <div>
-                          <span
-                            className={cn(
-                              "text-sm leading-none font-medium tabular-nums",
-                              transaction.type === "debit" ? "text-destructive" : "text-green-500",
-                            )}
-                          >
+                          <span className={cn("text-sm leading-none font-medium tabular-nums", transaction.type === "debit" ? "text-destructive" : "text-green-500")}>
                             {formatCurrency(transaction.amount, { noDecimals: true })}
                           </span>
                         </div>

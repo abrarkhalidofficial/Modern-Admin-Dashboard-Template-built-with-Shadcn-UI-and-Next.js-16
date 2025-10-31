@@ -76,13 +76,7 @@ export function RegisterForm() {
             <FormItem>
               <FormLabel>Confirm Password</FormLabel>
               <FormControl>
-                <Input
-                  id="confirmPassword"
-                  type="password"
-                  placeholder="••••••••"
-                  autoComplete="new-password"
-                  {...field}
-                />
+                <Input id="confirmPassword" type="password" placeholder="••••••••" autoComplete="new-password" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

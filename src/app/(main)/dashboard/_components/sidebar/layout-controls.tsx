@@ -88,14 +88,7 @@ export function LayoutControls(props: LayoutControlsProps) {
 
             <div className="space-y-1">
               <Label className="text-xs font-medium">Mode</Label>
-              <ToggleGroup
-                className="w-full"
-                size="sm"
-                variant="outline"
-                type="single"
-                value={themeMode}
-                onValueChange={(value) => handleValueChange("theme_mode", value)}
-              >
+              <ToggleGroup className="w-full" size="sm" variant="outline" type="single" value={themeMode} onValueChange={(value) => handleValueChange("theme_mode", value)}>
                 <ToggleGroupItem className="text-xs" value="light" aria-label="Toggle inset">
                   Light
                 </ToggleGroupItem>
@@ -107,14 +100,7 @@ export function LayoutControls(props: LayoutControlsProps) {
 
             <div className="space-y-1">
               <Label className="text-xs font-medium">Sidebar Variant</Label>
-              <ToggleGroup
-                className="w-full"
-                size="sm"
-                variant="outline"
-                type="single"
-                value={variant}
-                onValueChange={(value) => handleValueChange("sidebar_variant", value)}
-              >
+              <ToggleGroup className="w-full" size="sm" variant="outline" type="single" value={variant} onValueChange={(value) => handleValueChange("sidebar_variant", value)}>
                 <ToggleGroupItem className="text-xs" value="inset" aria-label="Toggle inset">
                   Inset
                 </ToggleGroupItem>
@@ -129,14 +115,7 @@ export function LayoutControls(props: LayoutControlsProps) {
 
             <div className="space-y-1">
               <Label className="text-xs font-medium">Navbar Style</Label>
-              <ToggleGroup
-                className="w-full"
-                size="sm"
-                variant="outline"
-                type="single"
-                value={navbarStyle}
-                onValueChange={(value) => handleValueChange("navbar_style", value)}
-              >
+              <ToggleGroup className="w-full" size="sm" variant="outline" type="single" value={navbarStyle} onValueChange={(value) => handleValueChange("navbar_style", value)}>
                 <ToggleGroupItem className="text-xs" value="sticky" aria-label="Toggle sticky">
                   Sticky
                 </ToggleGroupItem>
@@ -148,14 +127,7 @@ export function LayoutControls(props: LayoutControlsProps) {
 
             <div className="space-y-1">
               <Label className="text-xs font-medium">Sidebar Collapsible</Label>
-              <ToggleGroup
-                className="w-full"
-                size="sm"
-                variant="outline"
-                type="single"
-                value={collapsible}
-                onValueChange={(value) => handleValueChange("sidebar_collapsible", value)}
-              >
+              <ToggleGroup className="w-full" size="sm" variant="outline" type="single" value={collapsible} onValueChange={(value) => handleValueChange("sidebar_collapsible", value)}>
                 <ToggleGroupItem className="text-xs" value="icon" aria-label="Toggle icon">
                   Icon
                 </ToggleGroupItem>
@@ -167,14 +139,7 @@ export function LayoutControls(props: LayoutControlsProps) {
 
             <div className="space-y-1">
               <Label className="text-xs font-medium">Content Layout</Label>
-              <ToggleGroup
-                className="w-full"
-                size="sm"
-                variant="outline"
-                type="single"
-                value={contentLayout}
-                onValueChange={(value) => handleValueChange("content_layout", value)}
-              >
+              <ToggleGroup className="w-full" size="sm" variant="outline" type="single" value={contentLayout} onValueChange={(value) => handleValueChange("content_layout", value)}>
                 <ToggleGroupItem className="text-xs" value="centered" aria-label="Toggle centered">
                   Centered
                 </ToggleGroupItem>

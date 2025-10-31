@@ -1,16 +1,6 @@
 import * as React from "react";
 
-import {
-  KeyboardSensor,
-  MouseSensor,
-  TouchSensor,
-  useSensor,
-  useSensors,
-  DndContext,
-  closestCenter,
-  type UniqueIdentifier,
-  type DragEndEvent,
-} from "@dnd-kit/core";
+import { KeyboardSensor, MouseSensor, TouchSensor, useSensor, useSensors, DndContext, closestCenter, type UniqueIdentifier, type DragEndEvent } from "@dnd-kit/core";
 import { restrictToVerticalAxis } from "@dnd-kit/modifiers";
 import { SortableContext, verticalListSortingStrategy, arrayMove } from "@dnd-kit/sortable";
 import { ColumnDef, flexRender, type Table as TanStackTable } from "@tanstack/react-table";
@@ -64,12 +54,7 @@ function renderTableBody<TData, TValue>({
   ));
 }
 
-export function DataTable<TData, TValue>({
-  table,
-  columns,
-  dndEnabled = false,
-  onReorder,
-}: DataTableProps<TData, TValue>) {
+export function DataTable<TData, TValue>({ table, columns, dndEnabled = false, onReorder }: DataTableProps<TData, TValue>) {
   const dataIds: UniqueIdentifier[] = table.getRowModel().rows.map((row) => Number(row.id) as UniqueIdentifier);
   const sortableId = React.useId();
   const sensors = useSensors(useSensor(MouseSensor, {}), useSensor(TouchSensor, {}), useSensor(KeyboardSensor, {}));
@@ -101,21 +86,13 @@ export function DataTable<TData, TValue>({
           </TableRow>
         ))}
       </TableHeader>
-      <TableBody className="**:data-[slot=table-cell]:first:w-8">
-        {renderTableBody({ table, columns, dndEnabled, dataIds })}
-      </TableBody>
+      <TableBody className="**:data-[slot=table-cell]:first:w-8">{renderTableBody({ table, columns, dndEnabled, dataIds })}</TableBody>
     </Table>
   );
 
   if (dndEnabled) {
     return (
-      <DndContext
-        collisionDetection={closestCenter}
-        modifiers={[restrictToVerticalAxis]}
-        onDragEnd={handleDragEnd}
-        sensors={sensors}
-        id={sortableId}
-      >
+      <DndContext collisionDetection={closestCenter} modifiers={[restrictToVerticalAxis]} onDragEnd={handleDragEnd} sensors={sensors} id={sortableId}>
         {tableContent}
       </DndContext>
     );

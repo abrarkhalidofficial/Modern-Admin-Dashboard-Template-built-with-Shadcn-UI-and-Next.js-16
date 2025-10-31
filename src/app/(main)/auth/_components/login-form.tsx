@@ -59,13 +59,7 @@ export function LoginForm() {
             <FormItem>
               <FormLabel>Password</FormLabel>
               <FormControl>
-                <Input
-                  id="password"
-                  type="password"
-                  placeholder="••••••••"
-                  autoComplete="current-password"
-                  {...field}
-                />
+                <Input id="password" type="password" placeholder="••••••••" autoComplete="current-password" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -77,12 +71,7 @@ export function LoginForm() {
           render={({ field }) => (
             <FormItem className="flex flex-row items-center">
               <FormControl>
-                <Checkbox
-                  id="login-remember"
-                  checked={field.value}
-                  onCheckedChange={field.onChange}
-                  className="size-4"
-                />
+                <Checkbox id="login-remember" checked={field.value} onCheckedChange={field.onChange} className="size-4" />
               </FormControl>
               <FormLabel htmlFor="login-remember" className="text-muted-foreground ml-1 text-sm font-medium">
                 Remember me for 30 days

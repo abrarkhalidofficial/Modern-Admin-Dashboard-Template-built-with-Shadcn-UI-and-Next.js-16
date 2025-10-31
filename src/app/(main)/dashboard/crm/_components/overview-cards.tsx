@@ -7,14 +7,7 @@ import { Area, AreaChart, Line, LineChart, Bar, BarChart, XAxis } from "recharts
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 
-import {
-  leadsChartData,
-  leadsChartConfig,
-  proposalsChartData,
-  proposalsChartConfig,
-  revenueChartData,
-  revenueChartConfig,
-} from "./crm.config";
+import { leadsChartData, leadsChartConfig, proposalsChartData, proposalsChartConfig, revenueChartData, revenueChartConfig } from "./crm.config";
 
 const lastMonth = format(subMonths(new Date(), 1), "LLLL");
 
@@ -31,13 +24,7 @@ export function OverviewCards() {
             <BarChart accessibilityLayer data={leadsChartData} barSize={8}>
               <XAxis dataKey="date" tickLine={false} tickMargin={10} axisLine={false} hide />
               <ChartTooltip content={<ChartTooltipContent labelFormatter={(label) => `${lastMonth}: ${label}`} />} />
-              <Bar
-                background={{ fill: "var(--color-background)", radius: 4, opacity: 0.07 }}
-                dataKey="newLeads"
-                stackId="a"
-                fill="var(--color-newLeads)"
-                radius={[0, 0, 0, 0]}
-              />
+              <Bar background={{ fill: "var(--color-background)", radius: 4, opacity: 0.07 }} dataKey="newLeads" stackId="a" fill="var(--color-newLeads)" radius={[0, 0, 0, 0]} />
               <Bar dataKey="disqualified" stackId="a" fill="var(--color-disqualified)" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ChartContainer>
@@ -64,17 +51,8 @@ export function OverviewCards() {
               }}
             >
               <XAxis dataKey="date" tickLine={false} tickMargin={10} axisLine={false} hide />
-              <ChartTooltip
-                content={<ChartTooltipContent labelFormatter={(label) => `${lastMonth}: ${label}`} hideIndicator />}
-              />
-              <Area
-                dataKey="proposalsSent"
-                fill="var(--color-proposalsSent)"
-                fillOpacity={0.05}
-                stroke="var(--color-proposalsSent)"
-                strokeWidth={2}
-                type="monotone"
-              />
+              <ChartTooltip content={<ChartTooltipContent labelFormatter={(label) => `${lastMonth}: ${label}`} hideIndicator />} />
+              <Area dataKey="proposalsSent" fill="var(--color-proposalsSent)" fillOpacity={0.05} stroke="var(--color-proposalsSent)" strokeWidth={2} type="monotone" />
             </AreaChart>
           </ChartContainer>
         </CardContent>
