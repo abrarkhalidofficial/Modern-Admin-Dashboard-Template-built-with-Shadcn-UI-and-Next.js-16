@@ -4,15 +4,7 @@ import * as React from "react";
 import { LayoutDashboard, ChartBar, Gauge, ShoppingBag, GraduationCap, Forklift, Search } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import {
-  CommandDialog,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-  CommandSeparator,
-} from "@/components/ui/command";
+import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator } from "@/components/ui/command";
 
 const searchItems = [
   { group: "Dashboards", icon: LayoutDashboard, label: "Default" },
@@ -42,11 +34,7 @@ export function SearchDialog() {
 
   return (
     <>
-      <Button
-        variant="link"
-        className="text-muted-foreground !px-0 font-normal hover:no-underline"
-        onClick={() => setOpen(true)}
-      >
+      <Button variant="link" className="text-muted-foreground !px-0 font-normal hover:no-underline" onClick={() => setOpen(true)}>
         <Search className="size-4" />
         Search
         <kbd className="bg-muted inline-flex h-5 items-center gap-1 rounded border px-1.5 text-[10px] font-medium select-none">

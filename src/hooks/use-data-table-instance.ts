@@ -23,14 +23,7 @@ type UseDataTableInstanceProps<TData, TValue> = {
   getRowId?: (row: TData, index: number) => string;
 };
 
-export function useDataTableInstance<TData, TValue>({
-  data,
-  columns,
-  enableRowSelection = true,
-  defaultPageIndex,
-  defaultPageSize,
-  getRowId,
-}: UseDataTableInstanceProps<TData, TValue>) {
+export function useDataTableInstance<TData, TValue>({ data, columns, enableRowSelection = true, defaultPageIndex, defaultPageSize, getRowId }: UseDataTableInstanceProps<TData, TValue>) {
   const [rowSelection, setRowSelection] = React.useState({});
   const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({});
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([]);

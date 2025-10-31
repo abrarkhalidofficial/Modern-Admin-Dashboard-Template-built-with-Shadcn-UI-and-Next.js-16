@@ -5,14 +5,7 @@ import { useState } from "react";
 import { BadgeCheck, Bell, CreditCard, LogOut } from "lucide-react";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-  DropdownMenuGroup,
-} from "@/components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger, DropdownMenuGroup } from "@/components/ui/dropdown-menu";
 import { cn, getInitials } from "@/lib/utils";
 
 export function AccountSwitcher({
@@ -38,11 +31,7 @@ export function AccountSwitcher({
       </DropdownMenuTrigger>
       <DropdownMenuContent className="min-w-56 space-y-1 rounded-lg" side="bottom" align="end" sideOffset={4}>
         {users.map((user) => (
-          <DropdownMenuItem
-            key={user.email}
-            className={cn("p-0", user.id === activeUser.id && "bg-accent/50 border-l-primary border-l-2")}
-            onClick={() => setActiveUser(user)}
-          >
+          <DropdownMenuItem key={user.email} className={cn("p-0", user.id === activeUser.id && "bg-accent/50 border-l-primary border-l-2")} onClick={() => setActiveUser(user)}>
             <div className="flex w-full items-center justify-between gap-2 px-1 py-1.5">
               <Avatar className="size-9 rounded-lg">
                 <AvatarImage src={user.avatar || undefined} alt={user.name} />

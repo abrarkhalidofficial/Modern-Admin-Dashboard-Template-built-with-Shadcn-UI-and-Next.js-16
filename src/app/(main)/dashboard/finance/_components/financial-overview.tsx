@@ -99,13 +99,7 @@ export function FinancialOverview() {
           <BarChart margin={{ left: -25, right: 0, top: 25, bottom: 0 }} accessibilityLayer data={chartData}>
             <CartesianGrid vertical={false} />
             <XAxis dataKey="month" tickLine={false} tickMargin={10} axisLine={false} />
-            <YAxis
-              axisLine={false}
-              tickLine={false}
-              tickMargin={8}
-              tickFormatter={(value) => `${value >= 1000 ? value / 1000 + "k" : value}`}
-              domain={[0, 20000]}
-            />
+            <YAxis axisLine={false} tickLine={false} tickMargin={8} tickFormatter={(value) => `${value >= 1000 ? value / 1000 + "k" : value}`} domain={[0, 20000]} />
             <ChartTooltip content={<ChartTooltipContent hideLabel />} />
             <Bar dataKey="scheduled" stackId="a" fill={chartConfig.scheduled.color} />
             <Bar dataKey="expenses" stackId="a" fill={chartConfig.expenses.color} />

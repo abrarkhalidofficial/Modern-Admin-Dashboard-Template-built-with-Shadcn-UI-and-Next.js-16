@@ -104,10 +104,7 @@ export type ThemePreset = (typeof THEME_PRESET_OPTIONS)[number]["value"];
 
 const fileContent = fs.readFileSync(outputPath, "utf8");
 
-const updated = fileContent.replace(
-  /\/\/ --- generated:themePresets:start ---[\s\S]*?\/\/ --- generated:themePresets:end ---/,
-  generatedBlock,
-);
+const updated = fileContent.replace(/\/\/ --- generated:themePresets:start ---[\s\S]*?\/\/ --- generated:themePresets:end ---/, generatedBlock);
 
 async function main() {
   const formatted = await prettier.format(updated, { parser: "typescript" });

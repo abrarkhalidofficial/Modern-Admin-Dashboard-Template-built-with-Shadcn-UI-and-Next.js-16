@@ -145,16 +145,5 @@ export default defineConfig([
       "sonarjs/no-commented-code": "warn",
     },
   },
-  globalIgnores([
-    ".github/",
-    ".husky/",
-    "node_modules/",
-    ".next/**",
-    "out/**",
-    "build/**",
-    "next-env.d.ts",
-    "src/components/ui",
-    "*.config.ts",
-    "*.mjs",
-  ]),
+  globalIgnores([".github/", ".husky/", "node_modules/", ".next/**", "out/**", "build/**", "next-env.d.ts", "src/components/ui", "*.config.ts", "*.mjs"]),
 ]);

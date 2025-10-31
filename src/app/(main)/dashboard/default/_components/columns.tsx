@@ -6,13 +6,7 @@ import { z } from "zod";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -36,11 +30,7 @@ export const dashboardColumns: ColumnDef<z.infer<typeof sectionSchema>>[] = [
     ),
     cell: ({ row }) => (
       <div className="flex items-center justify-center">
-        <Checkbox
-          checked={row.getIsSelected()}
-          onCheckedChange={(value) => row.toggleSelected(!!value)}
-          aria-label="Select row"
-        />
+        <Checkbox checked={row.getIsSelected()} onCheckedChange={(value) => row.toggleSelected(!!value)} aria-label="Select row" />
       </div>
     ),
     enableSorting: false,
@@ -71,11 +61,7 @@ export const dashboardColumns: ColumnDef<z.infer<typeof sectionSchema>>[] = [
     header: ({ column }) => <DataTableColumnHeader column={column} title="Status" />,
     cell: ({ row }) => (
       <Badge variant="outline" className="text-muted-foreground px-1.5">
-        {row.original.status === "Done" ? (
-          <CircleCheck className="stroke-border fill-green-500 dark:fill-green-400" />
-        ) : (
-          <Loader />
-        )}
+        {row.original.status === "Done" ? <CircleCheck className="stroke-border fill-green-500 dark:fill-green-400" /> : <Loader />}
         {row.original.status}
       </Badge>
     ),
@@ -149,11 +135,7 @@ export const dashboardColumns: ColumnDef<z.infer<typeof sectionSchema>>[] = [
             Reviewer
           </Label>
           <Select>
-            <SelectTrigger
-              className="w-38 **:data-[slot=select-value]:block **:data-[slot=select-value]:truncate"
-              size="sm"
-              id={`${row.original.id}-reviewer`}
-            >
+            <SelectTrigger className="w-38 **:data-[slot=select-value]:block **:data-[slot=select-value]:truncate" size="sm" id={`${row.original.id}-reviewer`}>
               <SelectValue placeholder="Assign reviewer" />
             </SelectTrigger>
             <SelectContent align="end">

@@ -23,12 +23,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
   const themePreset = await getPreference<ThemePreset>("theme_preset", THEME_PRESET_VALUES, "default");
 
   return (
-    <html
-      lang="en"
-      className={themeMode === "dark" ? "dark" : ""}
-      data-theme-preset={themePreset}
-      suppressHydrationWarning
-    >
+    <html lang="en" className={themeMode === "dark" ? "dark" : ""} data-theme-preset={themePreset} suppressHydrationWarning>
       <body className={`${inter.className} min-h-screen antialiased`}>
         <PreferencesStoreProvider themeMode={themeMode} themePreset={themePreset}>
           {children}
