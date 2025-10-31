@@ -3,7 +3,7 @@ export const users = [
     id: "1",
     name: "Abrar Khalid",
     username: "abrarkhalidofficial",
-    email: "hello@devscot.com",
+    email: "Abrar@devscot.com",
     avatar: "/avatars/abrar.png",
     role: "administrator",
   },
